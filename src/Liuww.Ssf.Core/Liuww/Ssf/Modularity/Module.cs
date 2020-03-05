@@ -68,7 +68,7 @@ namespace Liuww.Ssf.Modularity
                 !typeInfo.IsGenericType &&
                 typeof(IModule).GetTypeInfo().IsAssignableFrom(type);
         }
-        internal static void CheckAbpModuleType(Type moduleType)
+        internal static void CheckModuleType(Type moduleType)
         {
             if (!IsModule(moduleType))
             {

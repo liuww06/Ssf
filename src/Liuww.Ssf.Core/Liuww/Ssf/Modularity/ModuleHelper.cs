@@ -17,7 +17,7 @@ namespace Liuww.Ssf.Modularity
 
         public static List<Type> FindDependedModuleTypes(Type moduleType)
         {
-            Module.CheckAbpModuleType(moduleType);
+            Module.CheckModuleType(moduleType);
 
             var dependencies = new List<Type>();
 
@@ -37,7 +37,7 @@ namespace Liuww.Ssf.Modularity
         }
         private static void AddModuleAndDependenciesResursively(List<Type> moduleTypes, Type moduleType)
         {
-            Module.CheckAbpModuleType(moduleType);
+            Module.CheckModuleType(moduleType);
 
             if (moduleTypes.Contains(moduleType))
             {
