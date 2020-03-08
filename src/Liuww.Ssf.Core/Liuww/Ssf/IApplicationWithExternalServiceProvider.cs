@@ -2,7 +2,7 @@
 
 namespace Liuww.Ssf
 {
-    public interface IAbpApplicationWithExternalServiceProvider:IApplication
+    public interface IApplicationWithExternalServiceProvider:IApplication
     {
         void Initialize(IServiceProvider serviceProvider);
     }

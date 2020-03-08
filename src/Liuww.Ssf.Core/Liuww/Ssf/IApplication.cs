@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Liuww.Ssf
 {
-    public interface IApplication:IModuleDescriptor,IDisposable
+    public interface IApplication:IModuleContainer,IDisposable
     {
         /// <summary>
         /// Type of startup(entrance) module of the application

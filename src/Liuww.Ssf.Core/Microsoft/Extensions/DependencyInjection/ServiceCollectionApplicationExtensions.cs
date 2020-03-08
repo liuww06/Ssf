@@ -1,23 +1,21 @@
 ﻿using System;
 using Liuww.Ssf;
+using Liuww.Ssf.Modularity;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
     public static class ServiceCollectionApplicationExtensions
     {
-        public static IAbpApplicationWithExternalServiceProvider AddApplication<TStartupModule>(this IServiceCollection services,
-            Action<AbpApplicationCreationOptions> optionsAction = null)
-            where TStartupModule : IAbpModule
+        public static IApplicationWithExternalServiceProvider AddApplication<TStartupModule>(this IServiceCollection services,
+            Action<ApplicationCreationOptions> optionsAction = null)
+            where TStartupModule : IModule
         {
-            return AbpApplicationFactory.Create<TStartupModule>(services, optionsAction);
+            return ApplicationFactory.Create<TStartupModule>(services, optionsAction);
         }
 
-        public static IAbpApplicationWithExternalServiceProvider AddApplication(
-            [NotNull] this IServiceCollection services,
-            [NotNull] Type startupModuleType,
-            [CanBeNull] Action<AbpApplicationCreationOptions> optionsAction = null)
+        public static IApplicationWithExternalServiceProvider AddApplication(this IServiceCollection services, Type startupModuleType,Action<ApplicationCreationOptions> optionsAction = null)
         {
-            return AbpApplicationFactory.Create(startupModuleType, services, optionsAction);
+            return ApplicationFactory.Create(startupModuleType, services, optionsAction);
         }
     }
 }
